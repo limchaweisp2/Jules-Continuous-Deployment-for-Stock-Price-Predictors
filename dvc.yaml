@@ -1,0 +1,11 @@
+stages:
+  train:
+    cmd: python train.py --data data_baseline.csv
+    deps:
+      - train.py
+      - data_baseline.csv
+    outs:
+      - confusion_matrix.png
+    metrics:
+      - metrics.json:
+          cache: false
